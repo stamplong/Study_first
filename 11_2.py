@@ -1,7 +1,7 @@
 import requests
 import bs4
 import webbrowser
-res = requests.get('http://www.jianshu.com/p/4ce1b066e12a')
+res = requests.get('https://www.pengfu.com/')
 playfile = open('124.txt','wb')
 for chunk in res.iter_content(1000000)
     playfile.write(chunk)

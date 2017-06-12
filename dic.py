@@ -2,6 +2,7 @@ import re
 import urllib2
 import bs4
 import sys
+# 修改在 argv.py
 url = "http://www.youdao.com/w/" + sys.argv[1] + "/#keyfrom=dict2.top"
 
 def download(url):
