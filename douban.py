@@ -2,6 +2,7 @@ import re
 import requests
 import sys
 import time
+import os
 reload(sys)
 sys.setdefaultencoding('utf8')
 headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:53.0) Gecko/20100101 Firefox/53.0"}
@@ -146,7 +147,7 @@ for i in range(10000,100000):
         except Exception,e:
             print "continue"
         time.sleep(2.1)
-    elif i>=10000 and i<100000:
+    elif i>=28507 and i<100000:
         url_2="%s"%i
         url = url_1+url_2+url_3
         request = requests.session()
@@ -172,11 +173,12 @@ for i in range(10000,100000):
             string_finally = "book:\n" + search_2[0][0] + "\n" +"jpg_address:\n" +search_2[0][1] +"\n" + rating_num[0][0] + rating_num[0][1]+"\n" + starstop[0][0] +starstop[0][1] + starstop[0][2] + starstop[0][3] + starstop[0][4] + starstop[0][5] + starstop[0][6] + starstop[0][7] + starstop[0][8] + starstop[0][9]+"\n***********"+"\n\n\n"
 
             print string_finally
-            src = os.getcwd()+"/papers/books.txt"
+            src = os.getcwd()+"/papers/books_one.txt"
 
-            write_to_txt = open(src,'a')
+            write_to_txt = open(src,'a+')
             write_to_txt.write(string_finally)
             write_to_txt.close
+            print src
         except Exception,e:
             print "continue"
-        time.sleep(2)
+        time.sleep(1)

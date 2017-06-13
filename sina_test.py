@@ -2,7 +2,7 @@ import re
 
 string = "src=\"https:\/\/tva4.sinaimg.cn\/crop.0.8.750.750.50\/8e71b4f4jw8f6zcinp4h1j20ku0lbweu.jpg\""
 
-pattern = re.compile(r'src=(.*?\.jpg).*?')
+pattern = re.compile(r'src=(.*?\.jpg)')
 
 test = re.findall(pattern,string)
 print test

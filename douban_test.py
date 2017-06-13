@@ -9,7 +9,7 @@ headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:53.0) 
 
 url_1 ="https://book.douban.com/subject/270"
 url_3 ="/?icn=index-editionrecommend"
-url_2 ="03599"
+url_2 ="10149"
 url = url_1+url_2+url_3
 request = requests.session()
 html = requests.get(url,headers=headers)
@@ -34,6 +34,6 @@ string_finally = "book:\n" + search_2[0][0] + "\n" +"jpg_address:\n" +search_2[0
 print string_finally
 src = os.getcwd()+"/papers/books.txt"
 
-write_to_txt = open(src,'w')
+write_to_txt = open(src,'a')
 write_to_txt.write(string_finally)
 write_to_txt.close
