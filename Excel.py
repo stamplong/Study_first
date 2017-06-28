@@ -1,39 +1,15 @@
-#!/usr/bin/env python
-#_*_ coding:utf-8_*_
-import openpyxl
-#from openpyxl.styles import Font,Style
+import xlrd
+import xlwt
+from datetime import datetime
+book = xlwt.Workbook()
+ws = book.add_sheet('a test sheet')
 
 
-import sys
+style0 = xlwt.easyxf(num_format_str="D-MMM_YY")
+style1 = xlwt.easyxf('font:name Times New Roman,color-index red,bold on')
 
-reload(sys)
-sys.setdefaultencoding('utf8')
-
-wb = openpyxl.load_workbook('example.xlsx')
-sh = wb.get_sheet_names()
-print sh[0]
-sheet1 = wb.get_sheet_by_name(sh[0])
-sh1 = wb.get_active_sheet()
-print sh1
-c = sheet1['B2']
-
-print c.value
-print c.row
-print c.column
-print c.coordinate
-print "*"*20
-
-print sheet1.cell(row=3,column=2).value
-tuple(sheet1)
-for i in sheet1['A1':'C3']:
-    for x in i:
-        print x.coordinate,x.value
-dic = {'abc':{'def':{'xbd':'enaf'}}}
-print dic['abc']['def']['xbd']
-#Style_fontobj1 = Style(font=fontobj1)
-#c.Style/Stylefontobj1
-#wb.save('example.xlsx')
-
-for x in sheet1['A1':'A10']:
-    for d in x:
-        print d.value
+ws.write(0,0,datetime.now(),style0)
+ws.write(1,0,10,style1)
+ws.write(2,0,10,style1)
+ws.write(3,0,xlwt.Formula("A2+A3"))
+book.save('abs.xls')

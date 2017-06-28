@@ -147,7 +147,7 @@ for i in range(10000,100000):
         except Exception,e:
             print "continue"
         time.sleep(2.1)
-    elif i>=28507 and i<100000:
+    elif i>=37639 and i<100000:
         url_2="%s"%i
         url = url_1+url_2+url_3
         request = requests.session()
